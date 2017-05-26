@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<run>
+  <tool>
+    <title>Lodders Abundances</title>
+    <about>Graphs z or a vs abundance</about>
+    <command>
+      @tool/abundances.py @driver
+    </command>
+    <limits>
+      <cputime>900</cputime>
+    </limits>
+    <action><label>Graph</label></action>
+    <layout>xxx</layout>
+    <control>manual</control>
+    <uq>false</uq>
+    <analyzer>xxx</analyzer>
+    <reportJobFailures>1</reportJobFailures>
+  </tool>
+  <input>
+    <loader>
+      <about>
+	<label>Load</label>
+	<description>Use to load</description>
+      </about>
+      <upload>
+	<to>input.string(data)</to>
+      </upload>
+    </loader>
+    <string id = 'data'></string>
+  </input>
+  <output>
+    <curve id = 'zvab'>
+      <about>
+	<label>Z vs Abundance</label>
+	<description>output graph</description>
+      </about>
+      <xaxis>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+      </xaxis>
+      <yaxis>
+	<label>Z</label>
+	<description>Atomic number of given species</description>
+      </yaxis>
+      <component>
+	<xy>
+	</xy>
+      </component>
+    </curve>
+    <curve id = 'avab'>
+      <about>
+	<label>A vs Abundance</label>
+	<description>output graph</description>
+      </about>
+      <xaxis>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+      </xaxis>
+      <yaxis>
+	<label>A</label>
+	<description>Atomic mass of given species</description>
+      </yaxis>
+      <component>
+	<xy>
+	</xy>
+      </component>
+    </curve>
+  </output>
+</run>
