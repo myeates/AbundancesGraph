@@ -9,11 +9,12 @@
 #==============================================================================
 import Rappture
 import sys
+from lxml import etree
 
 # open the XML file containing the run parameters
-driver = Rappture.PyXml(sys.argv[1])
+driver = Rappture.library("driver.xml")
 
-datafile = driver.get('input.string(data).current'
+datafile = driver.get('input.string(data).text')
   
 # Label the output graph with a title, x-axis label,
 # y-axis label, and y-axis units
