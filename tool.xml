@@ -3,17 +3,11 @@
   <tool>
     <title>Lodders Abundances</title>
     <about>Graphs z or a vs abundance</about>
-    <command>
-      @tool/abundances.py @driver
-    </command>
-    <limits>
-      <cputime>900</cputime>
-    </limits>
+    <command>python @tool/abundances.py @driver</command>
+    <limits><cputime>900</cputime></limits>
     <action><label>Graph</label></action>
-    <layout>xxx</layout>
     <control>manual</control>
     <uq>false</uq>
-    <analyzer>xxx</analyzer>
     <reportJobFailures>1</reportJobFailures>
   </tool>
   <input>
@@ -61,8 +55,7 @@
 	<description>Atomic mass of given species</description>
       </yaxis>
       <component>
-	<xy>
-	</xy>
+	<xy></xy>
       </component>
     </curve>
   </output>

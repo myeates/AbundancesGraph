@@ -7,13 +7,16 @@
 # AUTHOR: Matt Yeates
 #
 #==============================================================================
-
 import Rappture
 import sys
-from lxml import etree
 
-driver = Rappture.library(sys.argv[1])
+# open the XML file containing the run parameters
+driver = Rappture.PyXml(sys.argv[1])
 
+datafile = driver.get('input.string(data).current'
+  
+# Label the output graph with a title, x-axis label,
+# y-axis label, and y-axis units
 driver.put('output.curve(zvab).about.label','Z vs. Abundance',append=0)
 driver.put('output.curve(zvab).xaxis.label','Abundance',append=0)
 driver.put('output.curve(zvab).yaxis.label','Z',append=0)
@@ -22,10 +25,7 @@ driver.put('output.curve(avab).about.label','A vs. Abundance',append=0)
 driver.put('output.curve(avab).xaxis.label','Abundance',append=0)
 driver.put('output.curve(avab).yaxis.label','A',append=0)
 
-info = {}
-species = 0
-
-with open(driver.get('input.string(data).current') as input_file:
+with open(datafile) as input_file:
   for line in input_file:
     z, a, abundance = (
       item.strip() for item in line.split('\t', 2))
