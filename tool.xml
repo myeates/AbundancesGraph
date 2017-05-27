@@ -3,30 +3,21 @@
   <tool>
     <title>Lodders Abundances</title>
     <about>Graphs z or a vs abundance</about>
-    <command>
-      @tool/abundances.py @driver
-    </command>
-    <limits>
-      <cputime>900</cputime>
-    </limits>
+    <command>python @tool/abundances.py @driver</command>
+    <limits><cputime>900</cputime></limits>
     <action><label>Graph</label></action>
-    <layout>xxx</layout>
     <control>manual</control>
     <uq>false</uq>
-    <analyzer>xxx</analyzer>
     <reportJobFailures>1</reportJobFailures>
   </tool>
   <input>
-    <loader>
+    <string id = 'datapath'>
       <about>
-	<label>Load</label>
-	<description>Use to load</description>
+	<label>Path to input file</label>
+	<description>Input the path to the file you would like to analyze</description>
       </about>
-      <upload>
-	<to>input.string(data)</to>
-      </upload>
-    </loader>
-    <string id = 'data'></string>
+      <default>/home/myeates/Meyerstuff/rappture/loddersabundances/Lodders.txt</default>
+    </string>
   </input>
   <output>
     <curve id = 'zvab'>
@@ -61,8 +52,7 @@
 	<description>Atomic mass of given species</description>
       </yaxis>
       <component>
-	<xy>
-	</xy>
+	<xy></xy>
       </component>
     </curve>
   </output>
