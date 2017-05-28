@@ -54,7 +54,7 @@ infoz = [[0 for x in range(w)] for y in range(h)]
 sp = 0
 s = 0
 
-for s in range(len(infozt)):
+for s in range(len(infozt)-1):
   if infozt[s][0] == infozt[s+1][0]:
     infoz[sp][0] = infozt[s][0]
     infoz[sp][1] = infoz[sp][1] + infozt[s+1][1]
@@ -67,7 +67,7 @@ for s in range(len(infozt)):
 infoa = [[0 for x in range(w)] for y in range(h)]
 sp = 0
 
-for s in range(len(infoat)):
+for s in range(len(infoat)-1):
   if infoat[s][0] == infoat[s+1][0]:
     infoa[sp][0] = infoat[s][0]
     infoa[sp][1] = infoa[sp][1] + infoat[s+1][1]
@@ -77,11 +77,11 @@ for s in range(len(infoat)):
   sp = sp + 1
 
 #outputs arrays to rappture curve element
-for sp in infoz.items():
+for sp in range(len(infoz)):
   line = "%s %s\n" % (infoz[sp][0], infoz[sp][1])
   driver.put("output.curve(zvab).component.xy", line, append=1)
   
-for sp in infoa.items():
+for sp in range(len(infoz)):
   line = "%s %s\n" % (infoa[sp][0], infoa[sp][1])
   driver.put("output.curve(avab).component.xy", line, append=1)
 
