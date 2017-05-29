@@ -91,7 +91,9 @@ for ncounter in range(tlength):
       tcounter = ncounter
       break
 
-
+# this (along with subtracting one from int(nline[0])) fixes a small error 
+# in the above code; there's definitely a more elegant solution, but this 
+# works for now
 del infoa[0]
 infoa.append([int(infoat[-1][0]), infoat[-1][1]])
 
