@@ -14,9 +14,9 @@
     <string id = 'datapath'>
       <about>
 	<label>Path to input file</label>
-	<description>Input the path to the file you would like to analyze</description>
+	<description>The path, either on your desktop or on the web, to the input file. The default string loads an example from the web.</description>
       </about>
-      <default>/home/myeates/Meyerstuff/rappture/loddersabundances/Lodders.txt</default>
+      <default>https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
     </string>
   </input>
   <output>
