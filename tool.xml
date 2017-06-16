@@ -11,16 +11,13 @@
     <reportJobFailures>1</reportJobFailures>
   </tool>
   <input>
-    <loader>
+    <string id = 'datapath'>
       <about>
-	<label>Load</label>
-	<description>Use to load</description>
+	<label>Path to input file</label>
+	<description>The path, either on your desktop or on the web, to the input file. The default string loads an example from the web.</description>
       </about>
-      <upload>
-	<to>input.string(data)</to>
-      </upload>
-    </loader>
-    <string id = 'data'></string>
+      <default>https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
+    </string>
   </input>
   <output>
     <curve id = 'zvab'>
