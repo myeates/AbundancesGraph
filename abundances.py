@@ -9,6 +9,7 @@
 #==============================================================================
 import Rappture
 import sys
+import urllib2
 
 # open the XML file containing the run parameters
 driver = Rappture.library(sys.argv[1])
@@ -28,13 +29,21 @@ driver.put('output.curve(avab).yaxis.label','Abundance',append=0)
 infozt = []
 infoat = []
 
+# first checks if input string is a url or folder path, then
 # iterates through input file and creates an abundance vs z list
 # and an abundance vs a list without adding abundances of like species
-with open(datafile) as input_file:
+if "://" in datafile:
+  input_file = urllib2.urlopen(datafile)
   for line in input_file:
-    z, a, abundance = (item.strip() for item in line.split('\t', 2))
-    infozt.append([z, abundance])
-    infoat.append([a, abundance])
+      z, a, abundance = (item.strip() for item in line.split('\t', 2))
+      infozt.append([z, abundance])
+      infoat.append([a, abundance])
+else:  
+  with open(datafile) as input_file:
+    for line in input_file:
+      z, a, abundance = (item.strip() for item in line.split('\t', 2))
+      infozt.append([z, abundance])
+      infoat.append([a, abundance])
 
 #converts strings in lists to float vars
 for line in range(len(infozt)):
