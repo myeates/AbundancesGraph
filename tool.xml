@@ -8,7 +8,7 @@
     <action><label>Graph</label></action>
     <control>manual</control>
     <uq>false</uq>
-    <reportJobFailures>1</reportJobFailures>
+    <reportJobFailures>0</reportJobFailures>
   </tool>
   <input>
     <string id = 'datapath'>
@@ -32,6 +32,7 @@
       <yaxis>
 	<label>Z</label>
 	<description>Atomic number of given species</description>
+	<scale>log</scale>
       </yaxis>
       <component>
 	<xy>
@@ -50,6 +51,7 @@
       <yaxis>
 	<label>A</label>
 	<description>Atomic mass of given species</description>
+	<scale>log</scale>
       </yaxis>
       <component>
 	<xy></xy>
