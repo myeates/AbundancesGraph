@@ -80,39 +80,32 @@ while ncounter < (tlength - 1):
     infoz.append([int(tline[0]),zsum])
         
 # constants/counters
-tlength = len(infoat)
+a = 1
 asum = 0
-# final list
 infoa = []
 
-# loop for iterative sorting of abundance vs a
-for ncounter in range(tlength):
-  nline = infoat[ncounter]
-  for tcounter in range(tlength):
-    tline = infoat[tcounter+1]
-    # if they are equal, get sum and continue
-    if tline[0] == nline[0]:
-      asum += float(nline[1])
-    # if not equal, print out sums and restart at new values
-    elif tline[0] != nline[0]:
-      infoa.append([(int(nline[0])-1),asum])
-      asum = float(nline[1])
-      tcounter = ncounter
-      break
+while a <= 238:
+  for n in range(len(infoat)):
+    nline = infoat[n]
+    if nline[0] == a:
+      asum += nline[1]
+  infoa.append([a,asum])
+  a += 1
+  asum = 0
 
-# this (along with subtracting one from int(nline[0])) fixes a small error 
-# in the above code; there's definitely a more elegant solution, but this 
-# works for now
-del infoa[0]
-infoa.append([int(infoat[-1][0]), infoat[-1][1]])
+infoA = []
+
+for n in range(len(infoa)):
+  if infoa[n][1] != 0:
+    infoA.append(infoa[n])
 
 #outputs arrays to rappture string element
 for sp in range(len(infoz)):
   line = "%s %s\n" % (infoz[sp][0], infoz[sp][1])
   driver.put("output.curve(zvab).component.xy", line, append=1)
   
-for sp in range(len(infoa)):
-  line = "%s %s\n" % (infoa[sp][0], infoa[sp][1])
+for sp in range(len(infoA)):
+  line = "%s %s\n" % (infoA[sp][0], infoA[sp][1])
   driver.put("output.curve(avab).component.xy", line, append=1)
 
 Rappture.result(driver)

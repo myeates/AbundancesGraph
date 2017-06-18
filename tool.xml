@@ -22,6 +22,7 @@
   <output>
     <curve id = 'zvab'>
       <about>
+	<type>scatter</type>
 	<label>Z vs Abundance</label>
 	<description>output graph</description>
       </about>
@@ -41,6 +42,7 @@
     </curve>
     <curve id = 'avab'>
       <about>
+	<type>scatter</type>
 	<label>A vs Abundance</label>
 	<description>output graph</description>
       </about>
