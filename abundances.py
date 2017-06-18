@@ -1,4 +1,4 @@
-#------------------------------------------------------------------------------
+#==============================================================================
 # 
 # Generates a graph of Z or A vs abundances from an input .txt file
 #
@@ -45,7 +45,7 @@ else:
       infozt.append([z, abundance])
       infoat.append([a, abundance])
 
-#converts strings in lists to float vars
+# converts strings in lists to float vars
 for line in range(len(infozt)):
   for sub in range(len(infozt[line])):
     infozt[line][sub] = float(infozt[line][sub])
@@ -84,6 +84,7 @@ a = 1
 asum = 0
 infoa = []
 
+# adds like abundances and creates a new list
 while a <= 238:
   for n in range(len(infoat)):
     nline = infoat[n]
@@ -92,14 +93,16 @@ while a <= 238:
   infoa.append([a,asum])
   a += 1
   asum = 0
-
+  
+# final list
 infoA = []
 
+# fills the final list with nonzero values to remove any species with an abundance of 0
 for n in range(len(infoa)):
   if infoa[n][1] != 0:
     infoA.append(infoa[n])
 
-#outputs arrays to rappture string element
+#outputs lists to rappture curve elements
 for sp in range(len(infoz)):
   line = "%s %s\n" % (infoz[sp][0], infoz[sp][1])
   driver.put("output.curve(zvab).component.xy", line, append=1)
