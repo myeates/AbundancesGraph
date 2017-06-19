@@ -2,6 +2,7 @@
 <run>
   <tool>
     <title>Lodders Abundances</title>
+<<<<<<< HEAD
     <about>Graphs z or a vs abundance</about>
     <command>python @tool/abundances.py @driver</command>
     <limits><cputime>900</cputime></limits>
@@ -9,51 +10,134 @@
     <control>manual</control>
     <uq>false</uq>
     <reportJobFailures>1</reportJobFailures>
+=======
+    <about>Graphs Abundance vs. Z or A as a scatter plot or a line plot.</about>
+    <command>python @tool/abundances.py @driver</command>
+    <limits><cputime>900</cputime></limits>
+    <action><label>Graph</label></action>
+    <layout>wizard</layout>
+    <control>manual</control>
+    <uq>false</uq>
+    <reportJobFailures>0</reportJobFailures>
+>>>>>>> 632c775da6e06b5469079851122b36c903d6b58e
   </tool>
   <input>
     <string id = 'datapath'>
       <about>
+<<<<<<< HEAD
 	<label>Path to input file</label>
 	<description>The path, either on your desktop or on the web, to the input file. The default string loads an example from the web.</description>
       </about>
       <default>https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
+=======
+	<label>Input:</label>
+	<description>The location, either on your local computer or on the web, of the input file.</description>
+      </about>
+      <default>Graphs Abundance vs. Z or A as a scatter plot or a line plot.
+The tool aslo outputs the raw data as text after adding abundances.
+The tool takes the location, either local or on the web, of a .txt file. 
+      
+The input file should contain 3 columns, each separated by a tab, 
+with the first column containing atomic number, the second atomic mass, 
+and the third abundances.
+
+Loads an example .txt file from the web: 
+https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
+>>>>>>> 632c775da6e06b5469079851122b36c903d6b58e
     </string>
   </input>
   <output>
-    <curve id = 'zvab'>
+    <curve id = 'zvabs'>
       <about>
-	<label>Z vs Abundance</label>
-	<description>output graph</description>
+	<type>scatter</type>
+	<label>Z vs. Abundance (Scatter)</label>
+	<description>Shows atomic number versus abundance for each species as a scatter plot</description>
       </about>
       <xaxis>
-	<label>Abundance</label>
-	<description>Abundance of given species</description>
-      </xaxis>
-      <yaxis>
 	<label>Z</label>
 	<description>Atomic number of given species</description>
-      </yaxis>
-      <component>
-	<xy>
-	</xy>
-      </component>
-    </curve>
-    <curve id = 'avab'>
-      <about>
-	<label>A vs Abundance</label>
-	<description>output graph</description>
-      </about>
-      <xaxis>
-	<label>Abundance</label>
-	<description>Abundance of given species</description>
       </xaxis>
       <yaxis>
-	<label>A</label>
-	<description>Atomic mass of given species</description>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+	<scale>log</scale>
       </yaxis>
       <component>
 	<xy></xy>
       </component>
     </curve>
+    <curve id = 'avabs'>
+      <about>
+	<type>scatter</type>
+	<style>-color red</style>
+	<label>A vs. Abundance (Scatter)</label>
+	<description>Shows atomic mass versus abundance for each species as a scatter plot</description>
+      </about>
+      <xaxis>
+	<label>A</label>
+	<description>Atomic mass of given species</description>
+      </xaxis>
+      <yaxis>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+	<scale>log</scale>
+      </yaxis>
+      <component>
+	<xy></xy>
+      </component>
+    </curve>
+    <curve id = 'zvabl'>
+      <about>
+	<label>Z vs. Abundance (Line)</label>
+	<description>Shows atomic number versus abundance for each species as a line plot</description>
+      </about>
+      <xaxis>
+	<label>Z</label>
+	<description>Atomic number of given species</description>
+      </xaxis>
+      <yaxis>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+	<scale>log</scale>
+      </yaxis>
+      <component>
+	<xy></xy>
+      </component>
+    </curve>
+    <curve id = 'avabl'>
+      <about>
+	<style>-color red</style>
+	<label>A vs. Abundance (Line)</label>
+	<description>Shows atomic mass versus abundance for each species as a line plot</description>
+      </about>
+      <xaxis>
+	<label>A</label>
+	<description>Atomic mass of given species</description>
+      </xaxis>
+      <yaxis>
+	<label>Abundance</label>
+	<description>Abundance of given species</description>
+	<scale>log</scale>
+      </yaxis>
+      <component>
+	<xy></xy>
+      </component>
+    </curve>
+    <string id = 'dataz'>
+      <about>
+	<label>Z and Abundance (raw data)</label>
+	<description>Species with like Z have abundances added</description>
+      </about>
+      <default>Output is here</default>
+      <current></current>
+    </string>
+    <string id = 'dataa'>
+      <about>
+        <label>A and Abundance (raw data)</label>
+	<description>Species with like A have abundances added</description>
+      </about>
+      <default>Output is here</default>
+      <current></current>
+    </string>
   </output>
 </run>
