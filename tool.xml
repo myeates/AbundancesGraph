@@ -37,7 +37,7 @@
 	<description>The location, either on your local computer or on the web, of the input file.</description>
       </about>
       <default>Graphs Abundance vs. Z or A as a scatter plot or a line plot.
-The tool aslo outputs the raw data as text after adding abundances.
+The tool also outputs the raw data as text after adding abundances.
 The tool takes the location, either local or on the web, of a .txt file. 
       
 The input file should contain 3 columns, each separated by a tab, 
