@@ -33,7 +33,7 @@ https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</de
     <curve id = 'zvabs'>
       <about>
 	<type>scatter</type>
-	<label>Z vs Abundance (Scatter)</label>
+	<label>Z vs. Abundance (Scatter)</label>
 	<description>Shows atomic number versus abundance for each species as a scatter plot</description>
       </about>
       <xaxis>
@@ -53,7 +53,7 @@ https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</de
       <about>
 	<type>scatter</type>
 	<style>-color red</style>
-	<label>A vs Abundance (Scatter)</label>
+	<label>A vs. Abundance (Scatter)</label>
 	<description>Shows atomic mass versus abundance for each species as a scatter plot</description>
       </about>
       <xaxis>
@@ -71,7 +71,7 @@ https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</de
     </curve>
     <curve id = 'zvabl'>
       <about>
-	<label>Z vs Abundance (Line)</label>
+	<label>Z vs. Abundance (Line)</label>
 	<description>Shows atomic number versus abundance for each species as a line plot</description>
       </about>
       <xaxis>
@@ -90,7 +90,7 @@ https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</de
     <curve id = 'avabl'>
       <about>
 	<style>-color red</style>
-	<label>A vs Abundance (Line)</label>
+	<label>A vs. Abundance (Line)</label>
 	<description>Shows atomic mass versus abundance for each species as a line plot</description>
       </about>
       <xaxis>
