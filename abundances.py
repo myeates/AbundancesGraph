@@ -15,24 +15,6 @@ import urllib2
 driver = Rappture.library(sys.argv[1])
 datafile = driver.get("input.string(datapath).current")
 
-# Label the output graph with a title, x-axis label,
-# y-axis label, and y-axis units
-driver.put('output.curve(zvabs).about.label','Abundance vs. Z (Scatter)',append=0)
-driver.put('output.curve(zvabs).xaxis.label','Z',append=0)
-driver.put('output.curve(zvabs).yaxis.label','Abundance',append=0)
-
-driver.put('output.curve(avabs).about.label','Abundance vs. A (Scatter)',append=0)
-driver.put('output.curve(avabs).xaxis.label','A',append=0)
-driver.put('output.curve(avabs).yaxis.label','Abundance',append=0)
-
-driver.put('output.curve(zvabl).about.label','Abundance vs. Z (Line)',append=0)
-driver.put('output.curve(zvabl).xaxis.label','Z',append=0)
-driver.put('output.curve(zvabl).yaxis.label','Abundance',append=0)
-
-driver.put('output.curve(avabl).about.label','Abundance vs. A (Line)',append=0)
-driver.put('output.curve(avabl).xaxis.label','A',append=0)
-driver.put('output.curve(avabl).yaxis.label','Abundance',append=0)
-
 # builds empty temporary lists
 infozt = []
 infoat = []
@@ -89,7 +71,7 @@ a = 1
 asum = 0
 infoa = []
 
-# adds like abundances and creates a new list
+# adds like species and creates a new list
 while a <= 238:
   for n in range(len(infoat)):
     nline = infoat[n]
