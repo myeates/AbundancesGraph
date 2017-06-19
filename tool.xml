@@ -2,15 +2,6 @@
 <run>
   <tool>
     <title>Lodders Abundances</title>
-<<<<<<< HEAD
-    <about>Graphs z or a vs abundance</about>
-    <command>python @tool/abundances.py @driver</command>
-    <limits><cputime>900</cputime></limits>
-    <action><label>Graph</label></action>
-    <control>manual</control>
-    <uq>false</uq>
-    <reportJobFailures>1</reportJobFailures>
-=======
     <about>Graphs Abundance vs. Z or A as a scatter plot or a line plot.</about>
     <command>python @tool/abundances.py @driver</command>
     <limits><cputime>900</cputime></limits>
@@ -19,17 +10,29 @@
     <control>manual</control>
     <uq>false</uq>
     <reportJobFailures>0</reportJobFailures>
->>>>>>> 632c775da6e06b5469079851122b36c903d6b58e
   </tool>
   <input>
+    <choice id = 'inputtype'>
+      <about>
+	<label>Input Type</label>
+	<description>Pick whether the input is as web address or a folder path</description>
+      </about>
+      <option>
+	<about>
+	  <label>Web Address</label>
+	</about>
+	<value>web</value>
+      </option>
+      <option>
+	<about>
+	  <label>Folder</label>
+	</about>
+	<value>folder</value>
+      </option>
+      <default>Web Address</default>
+    </choice>
     <string id = 'datapath'>
       <about>
-<<<<<<< HEAD
-	<label>Path to input file</label>
-	<description>The path, either on your desktop or on the web, to the input file. The default string loads an example from the web.</description>
-      </about>
-      <default>https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
-=======
 	<label>Input:</label>
 	<description>The location, either on your local computer or on the web, of the input file.</description>
       </about>
@@ -43,7 +46,6 @@ and the third abundances.
 
 Loads an example .txt file from the web: 
 https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
->>>>>>> 632c775da6e06b5469079851122b36c903d6b58e
     </string>
   </input>
   <output>
