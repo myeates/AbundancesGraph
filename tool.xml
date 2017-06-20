@@ -12,10 +12,20 @@
     <reportJobFailures>0</reportJobFailures>
   </tool>
   <input>
+    <note>
+      <contents>file://instructions.html</contents>
+    </note>
+    <loader>
+      <about>
+	<label>Example</label>
+	<description>Use this to load an example.</description>
+      </about>
+      <example>*.xml</example>
+    </loader>
     <choice id = 'inputtype'>
       <about>
 	<label>Input Type</label>
-	<description>Pick whether the input is as web address or a folder path</description>
+	<description>Pick whether the input is a web address or a folder path</description>
       </about>
       <option>
 	<about>
@@ -29,23 +39,12 @@
 	</about>
 	<value>folder</value>
       </option>
-      <default>Web Address</default>
     </choice>
     <string id = 'datapath'>
       <about>
 	<label>Input:</label>
 	<description>The location, either on your local computer or on the web, of the input file.</description>
       </about>
-      <default>Graphs Abundance vs. Z or A as a scatter plot or a line plot.
-The tool also outputs the raw data as text after adding abundances.
-The tool takes the location, either local or on the web, of a .txt file. 
-      
-The input file should contain 3 columns, each separated by a tab, 
-with the first column containing atomic number, the second atomic mass, 
-and the third abundances.
-
-Loads an example .txt file from the web: 
-https://raw.githubusercontent.com/myeates/AbundancesGraph/master/Lodders.txt</default>
     </string>
   </input>
   <output>
